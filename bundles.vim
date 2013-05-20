@@ -69,6 +69,8 @@ Bundle 'scrooloose/vim-space'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 
+Bundle 'vim-slime'
+
 "Bundle 'ShowMarks'
 "Bundle 'tpope/vim-unimpaired'
 "Bundle 'reinh/vim-makegreen'

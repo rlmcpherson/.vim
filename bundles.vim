@@ -70,7 +70,10 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 
 Bundle 'vim-slime'
-
+Bundle 'benmills/vimux'
+Bundle 'Blackrush/vim-gocode'
 "Bundle 'ShowMarks'
 "Bundle 'tpope/vim-unimpaired'
 "Bundle 'reinh/vim-makegreen'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'rking/ag.vim'

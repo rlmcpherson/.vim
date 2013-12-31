@@ -8,7 +8,8 @@ let g:Powerline_symbols = 'fancy'
 let g:slime_target = "tmux"
 
 " godef
-"let g:godef_split=2 
+let g:godef_split=2 
+let g:godef_same_file_in_same_window=1
 
 "gist
 let g:gist_post_private = 1

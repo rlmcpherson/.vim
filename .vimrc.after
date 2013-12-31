@@ -9,6 +9,7 @@ let g:slime_target = "tmux"
 
 " godef
 "let g:godef_split=2 
+
 "gist
 let g:gist_post_private = 1
 let g:gist_open_browser_after_post = 1
@@ -18,15 +19,25 @@ let g:gist_show_privates = 1
 let g:EclimCompletionMethod = 'omnifunc'
 
 set nocompatible      " We're running Vim, not Vi!
-
 inoremap jj <ESC>
 inoremap <C-c> <C-o>A
 set autoindent
-
-autocmd BufLeave,FocusLost * silent! wall
-
-
 set wrap
 set expandtab
 
+" autosave buffers
+autocmd BufLeave,FocusLost * silent! wall
+
+" go 
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+let g:gofmt_command = "goimports" " use instead of gofmt
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" go oracle (experimental)
 source $GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.vim

@@ -12,13 +12,4 @@ if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after
 endif
 
-if has('gui_running')
-  if filereadable(expand("~/.local-gui.vim"))
-    echo "~/.local-gui.vim is deprecated, please move it to ~/.gvimrc.after"
-    source ~/.local-gui.vim
-  endif
 
-  if filereadable(expand("~/.gvimrc.after"))
-    source ~/.gvimrc.after
-  endif
-end

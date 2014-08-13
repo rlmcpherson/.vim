@@ -26,8 +26,8 @@ set wildmenu            " enhanced command completion
 set visualbell          " use visual bell instead of beeping
 set laststatus=2        " always show the status line
 "set listchars=tab:▷⋅,trail:·,eol:$
-set listchars=tab:▷⋅,trail:·
-set list
+"set listchars=tab:▷⋅,trail:·
+"set list
 
 " highlight spell errors
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
@@ -50,9 +50,6 @@ set modelines=5         " number of lines to check for vim: directives at the st
 "set fixdel                 " fix terminal code for delete (if delete is broken but backspace works)
 set autoindent          " automatically indent new line
 
-set ts=4                " number of spaces in a tab
-set sw=4                " number of spaces for indent
-set et                  " expand tabs into spaces
 
 " mouse settings
 if has("mouse")
@@ -67,9 +64,9 @@ set ignorecase          " Do case insensitive matching
 set smartcase           " do not ignore if search pattern has CAPS
 
 " omni completion settings
-"set ofu=syntaxcomplete#Complete
-"let g:rubycomplete_buffer_loading = 0
-"let g:rubycomplete_classes_in_global = 1
+set ofu=syntaxcomplete#Complete
+let g:rubycomplete_buffer_loading = 0
+let g:rubycomplete_classes_in_global = 1
 
 " directory settings
 silent !mkdir -vp ~/.backup/undo/ > /dev/null 2>&1

@@ -1,10 +1,3 @@
-" showmarks
-let g:showmarks_enable = 0 " disabled by default by populardemand ;)
-hi! link ShowMarksHLl LineNr
-hi! link ShowMarksHLu LineNr
-hi! link ShowMarksHLo LineNr
-hi! link ShowMarksHLm LineNr
-
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
@@ -23,10 +16,6 @@ nmap <leader>p :NERDTreeFind<CR>
 " ,/ to invert comment on the current line/selection
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
-
-" ,t to show tags window
-let Tlist_Show_Menu=1
-nmap <leader>t :TlistToggle<CR>
 
 " sessionman
 nmap <leader>S :SessionList<CR>
@@ -50,12 +39,7 @@ let g:yankring_history_dir = '~/.backup'
 
 " rails
 " completing Rails hangs a lot
-"let g:rubycomplete_rails = 1
-
-" command-t
-"nmap <unique> <silent> <Leader>, :CommandT<CR>
-"nmap <unique> <silent> <Leader>. :CommandTFlush<CR>:CommandT<CR>
-"let g:CommandTMatchWindowAtTop=1
+let g:rubycomplete_rails = 1
 
 let g:ctrlp_map = '<leader>,'
 let g:ctrlp_cmd = 'CtrlP'
@@ -112,16 +96,6 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 5
 
-" VimClojure
-let g:vimclojure#ParenRainbow = 1
-let g:vimclojure#DynamicHighlighting = 1
-
-" Utl.vim
-if has("mac")
-  let g:utl_cfg_hdl_scm_http_system = "!open '%u'"
-end
-nmap <leader>o :Utl
-
 " VimOrganizer
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org call org#SetOrgFileType()
@@ -130,12 +104,4 @@ au BufEnter *.org call org#SetOrgFileType()
 nmap <leader>u :GundoToggle<CR>
 let g:gundo_close_on_revert = 1
 
-" Switch
-" making some of the switches defined for ruby work in HAML files
-autocmd FileType haml let b:switch_definitions =
-      \ [
-      \   g:switch_builtins.ruby_hash_style,
-      \   g:switch_builtins.ruby_string,
-      \   g:switch_builtins.true_false,
-      \   g:switch_builtins.true_false,
-      \ ]
+

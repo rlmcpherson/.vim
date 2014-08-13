@@ -2,7 +2,6 @@
 " which means it loads AFTER the rest of the plugins
 
 source ~/.vim/bindings.vim
-source ~/.vim/plugins-override.vim
 
 if filereadable(expand("~/.local-after.vim"))
   echo "~/.local-after.vim is deprecated, please move it to ~/.vimrc.after"

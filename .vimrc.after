@@ -40,13 +40,6 @@ set tabstop=2
 " autosave buffers
 autocmd BufLeave,FocusLost * silent! wall
 
-" go 
-" Some Linux distributions set filetype in /etc/vimrc.
-" Clear filetype flags before changing runtimepath to force Vim to reload them.
-"filetype off
-"filetype plugin indent off
-"set runtimepath+=$GOROOT/misc/vim
-
 "Youcompleteme
 let g:ycm_semantic_triggers =  {
             \   'c' : ['->', '.'],
@@ -60,16 +53,10 @@ let g:ycm_semantic_triggers =  {
             \   'lua' : ['.', ':'],
             \   'erlang' : [':'],
             \ }
-let g:ycm_cache_omnifunc = 0
-
-"set omnifunc=syntaxcomplete#Complete
-"set completeopt=preview,menuone
 syntax on
 filetype plugin indent on     " required!
 filetype plugin on
-"let g:gofmt_command = 'goimports' " use instead of gofmt
-" autocmd FileType go autocmd BufWritePre <buffer> Fmt
-"au FileType go au BufWritePre <buffer> Fmt " go fmt on save
+
 
 " ag / the silver searcher 
 "let g:agprg="<Ag -S> --column"

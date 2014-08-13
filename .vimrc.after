@@ -1,5 +1,5 @@
 let &t_Co=256
-colorscheme Tomorrow-Night
+colorscheme macvim
 let NERDTreeWinPos = "right"
 let g:indent_guides_enable_on_vim_startup = 0
 let g:ruby_debugger_progname = 'mvim'
@@ -16,15 +16,26 @@ let g:gist_post_private = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_show_privates = 1
 
+"ruby autocomplete
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+
+"ruby tabs to spaces
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
 "eclim for ruby autocompletion with youcompleteme
-let g:EclimCompletionMethod = 'omnifunc'
+"let g:EclimCompletionMethod = 'omnifunc'
 
 set nocompatible      " We're running Vim, not Vi!
 inoremap jj <ESC>
-inoremap <C-c> <C-o>A
+"inoremap <C-c> <C-o>A
 set autoindent
 set wrap
 set expandtab
+set smartindent
+set tabstop=2
 
 " autosave buffers
 autocmd BufLeave,FocusLost * silent! wall
@@ -32,13 +43,63 @@ autocmd BufLeave,FocusLost * silent! wall
 " go 
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
-let g:gofmt_command = "goimports" " use instead of gofmt
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+"filetype off
+"filetype plugin indent off
+"set runtimepath+=$GOROOT/misc/vim
 
-" go oracle (experimental)
-source $GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.vim
+"Youcompleteme
+let g:ycm_semantic_triggers =  {
+            \   'c' : ['->', '.'],
+            \   'objc' : ['->', '.'],
+            \   'ocaml' : ['.', '#'],
+            \   'cpp,objcpp' : ['->', '.', '::'],
+            \   'perl' : ['->'],
+            \   'php' : ['->', '::'],
+            \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+            \   'ruby' : ['.', '::'],
+            \   'lua' : ['.', ':'],
+            \   'erlang' : [':'],
+            \ }
+let g:ycm_cache_omnifunc = 0
+
+"set omnifunc=syntaxcomplete#Complete
+"set completeopt=preview,menuone
+syntax on
+filetype plugin indent on     " required!
+filetype plugin on
+"let g:gofmt_command = 'goimports' " use instead of gofmt
+" autocmd FileType go autocmd BufWritePre <buffer> Fmt
+"au FileType go au BufWritePre <buffer> Fmt " go fmt on save
+
+" ag / the silver searcher 
+"let g:agprg="<Ag -S> --column"
+
+" Ruby format on save
+"au FileType ruby au BufWritePre <buffer> execute 'normal! gg=G' 
+
+
+" ultisnips / YouCompleteMe intercompatibility
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+" this mapping Enter key to <C-y> to chose the current highlight item 
+" and close the selection list, same as other IDEs.
+" CONFLICT with some plugins like tpope/Endwise
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+

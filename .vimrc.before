@@ -1,5 +1,5 @@
 "Youcompleteme
-let g:ycm_semantic_triggers =  {
+"let g:ycm_semantic_triggers =  {
             \   'c' : ['->', '.'],
             \   'objc' : ['->', '.'],
             \   'ocaml' : ['.', '#'],
@@ -12,5 +12,8 @@ let g:ycm_semantic_triggers =  {
             \   'erlang' : [':'],
             \ }
 "let g:ycm_cache_omnifunc = 0
-
-
+"
+"set omnifunc=syntaxcomplete#Complete
+"set completeopt=preview,menuone
+"set mouse=a
+"set autoindent

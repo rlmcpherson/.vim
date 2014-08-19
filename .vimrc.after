@@ -59,7 +59,7 @@ filetype plugin on
 
 
 " ag / the silver searcher 
-"let g:agprg="<Ag -S> --column"
+let g:agprg="ag -i --column"
 
 " Ruby format on save
 "au FileType ruby au BufWritePre <buffer> execute 'normal! gg=G' 

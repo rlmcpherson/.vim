@@ -35,13 +35,13 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'JSON.vim'
 Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'godlygeek/tabular'
 
 " misc
 Bundle 'tpope/vim-repeat'
 Bundle 'vitaly/vim-gitignore'
 "Bundle 'scrooloose/vim-space'
-Bundle 'mattn/gist-vim'
 Bundle 'rking/ag.vim'
 
 " tmux
@@ -55,3 +55,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'fatih/vim-go'
 Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
+
+" gist
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'

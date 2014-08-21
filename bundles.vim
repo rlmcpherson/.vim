@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -35,13 +35,15 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'JSON.vim'
 Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'godlygeek/tabular'
 
 " misc
 Bundle 'tpope/vim-repeat'
 Bundle 'vitaly/vim-gitignore'
 "Bundle 'scrooloose/vim-space'
 Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim' 
 Bundle 'rking/ag.vim'
 
 " tmux

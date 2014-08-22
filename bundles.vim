@@ -35,6 +35,8 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'JSON.vim'
 Bundle 'tpope/vim-haml'
+
+" markdown
 Bundle 'plasticboy/vim-markdown'
 Bundle 'godlygeek/tabular'
 

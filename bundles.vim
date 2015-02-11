@@ -22,6 +22,9 @@ Bundle 'hsitz/VimOrganizer'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/splice.vim'
 
+" autoclose
+Bundle 'Raimondi/delimitMate'
+
 " Ruby/Rails
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
@@ -35,6 +38,9 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'JSON.vim'
 Bundle 'tpope/vim-haml'
+Bundle 'jcf/vim-latex'
+"Bundle 'lervag/vim-latex'
+Bundle 'avakhov/vim-yaml'
 
 " markdown
 Bundle 'plasticboy/vim-markdown'
@@ -49,6 +55,7 @@ Bundle 'rking/ag.vim'
 " tmux
 Bundle 'tsaleh/vim-tmux'
 Bundle 'benmills/vimux'
+Bundle 'tpope/vim-obsession.git'
 
 " completion
 Bundle 'Valloric/YouCompleteMe'

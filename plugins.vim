@@ -64,8 +64,8 @@ let g:ctrlp_max_height = 40
 " jump to buffer in the same tab if already open
 let g:ctrlp_switch_buffer = 1
 
-" if in git repo - use git file listing command, should be faster
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -cod']
+" ignore godep
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](Godeps)$', }
 
 " open multiple files with <c-z> to mark and <c-o> to open. v - opening in
 " vertical splits; j - jump to first open buffer; r - open first in current buffer

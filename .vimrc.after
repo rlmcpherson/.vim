@@ -1,11 +1,12 @@
 let &t_Co=256
-colorscheme macvim
+"colorscheme macvim
 let NERDTreeWinPos = "right"
 let g:indent_guides_enable_on_vim_startup = 0
 let g:ruby_debugger_progname = 'mvim'
 let g:Powerline_symbols = 'fancy'
 
 let g:slime_target = "tmux"
+
 
 " godef
 let g:godef_split=2 
@@ -53,6 +54,14 @@ let g:ycm_semantic_triggers =  {
 
 " vim-go
 let g:go_fmt_command = "goimports"
+let g:go_oracle_tags = "integration"
+let g:go_highlight_structs = 1 
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:syntastic_go_go_test_args = "-tags=integration"
+let g:syntastic_go_go_build_args = "-tags=integration"
 
 
 " ultisnips / YouCompleteMe intercompatibility

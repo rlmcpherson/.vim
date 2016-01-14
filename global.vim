@@ -86,5 +86,5 @@ set nofoldenable        "dont fold by default "
 " extended '%' mapping for if/then/else/end etc
 runtime macros/matchit.vim
 
-let mapleader = ","
+let mapleader = "\<Space>"
 let maplocalleader = "\\"

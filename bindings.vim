@@ -16,10 +16,6 @@ nmap <C-E> :b#<CR>
 " ,e to fast finding files. just type beginning of a name and hit TAB
 nmap <leader>e :e **/
 
-" Make shift-insert work like in Xterm
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
-
 " ,n to get the next location (compilation errors, grep etc)
 nmap <leader>n :cn<CR>
 nmap <leader>N :cp<CR>
@@ -31,13 +27,6 @@ nmap <leader>dg :diffget<CR>
 
 "set completeopt=menuone,preview,longest
 set completeopt=menuone,preview
-
-" driving me insane this thing
-command Q q
-command Qa qa
-command QA qa
-command -nargs=* -complete=file W w <args>
-command -nargs=* -complete=file E e <args>
 
 " center display after searching
 nnoremap n   nzz
@@ -72,3 +61,9 @@ nnoremap <C-l> <C-w>l
 
 " fast expand current file's directory in command mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" fast save
+nnoremap <leader>w :w<CR>
+
+" visual line mode 
+nmap <Leader>V V

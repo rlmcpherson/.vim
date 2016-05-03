@@ -8,7 +8,8 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'YankRing.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -16,31 +17,29 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 Bundle 'greplace.vim'
 Bundle 'astrails/vim-powerline'
-"Bundle 'Lokaltog/powerline'
 Bundle 'Indent-Guides'
 Bundle 'utl.vim'
-Bundle 'hsitz/VimOrganizer'
-Bundle 'sjl/gundo.vim'
-Bundle 'sjl/splice.vim'
+
+" text selection
+Bundle 'terryma/vim-expand-region' 
 
 " autoclose
-Bundle 'Raimondi/delimitMate'
+"Bundle 'Raimondi/delimitMate'
 
 " Ruby/Rails
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rake'
+"Bundle 'tpope/vim-rails'
+"Bundle 'tpope/vim-bundler'
+"Bundle 'tpope/vim-rake'
 
 " color themes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-vividchalk'
+Bundle 'mhartington/oceanic-next'
+Bundle 'morhetz/gruvbox'
 
 " syntax support
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'JSON.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'jcf/vim-latex'
-"Bundle 'lervag/vim-latex'
 Bundle 'avakhov/vim-yaml'
 Bundle 'vim-scripts/AnsiEsc.vim'
 
@@ -51,7 +50,6 @@ Bundle 'godlygeek/tabular'
 " misc
 Bundle 'tpope/vim-repeat'
 Bundle 'vitaly/vim-gitignore'
-"Bundle 'scrooloose/vim-space'
 Bundle 'rking/ag.vim'
 
 " tmux
@@ -70,3 +68,21 @@ Bundle 'majutsushi/tagbar'
 " gist
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+
+"rust
+Bundle 'phildawes/racer'
+Bundle 'wting/rust.vim'
+
+
+" search
+Bundle 'dkprice/vim-easygrep'
+
+" c / c++
+"Bundle 'vim-scripts/a.vim'
+"Bundle 'Rip-Rip/clang_complete'
+
+" proto
+Bundle 'uarun/vim-protobuf'
+
+"casing 
+Bundle 'tpope/vim-abolish'

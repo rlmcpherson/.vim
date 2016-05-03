@@ -11,6 +11,7 @@ let g:delimitMate_expand_cr = 1
 nmap <C-P> :NERDTreeTabsToggle<CR>
 " ,p to show current file in the tree
 nmap <leader>p :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
 
 " nerdcommenter
 " ,/ to invert comment on the current line/selection
@@ -37,11 +38,9 @@ nmap <leader>y :YRShow<cr>
 " put the yankring_history file in ~/.backup
 let g:yankring_history_dir = '~/.backup'
 
-" rails
-" completing Rails hangs a lot
-let g:rubycomplete_rails = 1
 
-let g:ctrlp_map = '<leader>,'
+"ctrlp
+let g:ctrlp_map = '<leader><leader>'
 let g:ctrlp_cmd = 'CtrlP'
 
 nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>
@@ -72,6 +71,19 @@ let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](Godeps)$', }
 let g:ctrlp_open_multiple_files = 'vjr'
 
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'mixed', 'line']
+" from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif
+
 
 " Fugitive
 " ,g for Ggrep
@@ -82,9 +94,6 @@ nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R>
 
 " same in visual mode
 :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
-" Ack
-" ,a for Ack
-nmap <leader>k :Ack<space>
 
 " vim-indentobject
 " add Markdown to the list of indentation based languages
@@ -96,12 +105,20 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 5
 
-" VimOrganizer
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org call org#SetOrgFileType()
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
-" Gundo
-nmap <leader>u :GundoToggle<CR>
-let g:gundo_close_on_revert = 1
 
+"rust racer
+set hidden
+let g:racer_cmd="/Users/rmcpherson/dotvim/bundle/racer"
+let $RUST_SRC_PATH="/Users/rmcpherson/dev/rust/rustc-1.0.0/src"
+
+
+" clang_complete
+let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
+
+" git gutter
+let g:gitgutter_max_signs = 5000
 

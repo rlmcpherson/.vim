@@ -64,6 +64,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'fatih/vim-go'
 Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
+Bundle 'AndrewRadev/splitjoin.vim'
 
 " gist
 Bundle 'mattn/webapi-vim'

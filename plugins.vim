@@ -1,7 +1,3 @@
-" delimitMate
-let g:delimitMate_expand_space = 1
-let g:delimitMate_expand_cr = 1
-
 " nerdtree
 " Ctrl-P to Display the file browser tree
 nmap <C-P> :NERDTreeTabsToggle<CR>
@@ -118,7 +114,7 @@ let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchain
 " git gutter
 let g:gitgutter_max_signs = 5000
 
-" vim-go
+" vim-go options
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -127,9 +123,38 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
-let g:go_oracle_tags = "integration"
+let g:go_guru_tags = "-tags=integration"
 let g:syntastic_go_go_test_args = "-tags=integration"
 let g:syntastic_go_go_build_args = "-tags=integration"
+"let g:go_list_type = "locationlist"
+let g:go_auto_sameids = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+
+
+
+" shortcuts
+nnoremap <leader>g :GoTestCompile<CR>
+
+" goalternate shortcuts from
+" https://github.com/fatih/vim-go-tutorial#move-between-functio://github.com/fatih/vim-go-tutorial#move-between-functions 
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+" go-info shortcut
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+
+
+" syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck'] " go save speedup
+
+
 
 " godef
 let g:godef_split=2 
@@ -177,13 +202,4 @@ let g:UltiSnipsListSnippets="<c-e>"
 " this mapping Enter key to <C-y> to chose the current highlight item 
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
-
-
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck'] " go save speedup
-
-
 

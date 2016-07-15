@@ -8,30 +8,14 @@ let NERDTreeWinPos = "right"
 let g:indent_guides_enable_on_vim_startup = 0
 let g:Powerline_symbols = 'fancy'
 
-let g:slime_target = "tmux"
-
-
-"ruby autocomplete
-"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-
 "ruby tabs to spaces
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-
-"eclim for ruby autocompletion with youcompleteme
-"let g:EclimCompletionMethod = 'omnifunc'
 
 " autosave buffers
 autocmd BufLeave,FocusLost * silent! wall
 
 " ag / the silver searcher 
 "let g:agprg="ag -i --column"
-
-" Ruby format on save
-"au FileType ruby au BufWritePre <buffer> execute 'normal! gg=G' 
-
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 

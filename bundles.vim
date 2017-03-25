@@ -8,7 +8,6 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/nerdcommenter'
-"Bundle 'kien/ctrlp.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'YankRing.vim'
 Bundle 'tpope/vim-fugitive'
@@ -41,6 +40,7 @@ Bundle 'JSON.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'jcf/vim-latex'
 Bundle 'avakhov/vim-yaml'
+"Bundle 'stephpy/vim-yaml'
 Bundle 'vim-scripts/AnsiEsc.vim'
 
 " markdown
@@ -65,6 +65,7 @@ Bundle 'fatih/vim-go'
 Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'Shougo/neocomplete'
 
 " gist
 Bundle 'mattn/webapi-vim'

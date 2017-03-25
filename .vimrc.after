@@ -1,18 +1,19 @@
 "theme, color
-
-"let &t_Co=256
 colorscheme Gruvbox
 set background=dark
 
-let NERDTreeWinPos = "right"
 let g:indent_guides_enable_on_vim_startup = 0
 let g:Powerline_symbols = 'fancy'
 
 "ruby tabs to spaces
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " autosave buffers
 autocmd BufLeave,FocusLost * silent! wall
+
+" yaml
+filetype plugin indent on
 
 " ag / the silver searcher 
 "let g:agprg="ag -i --column"

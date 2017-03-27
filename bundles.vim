@@ -42,6 +42,9 @@ Bundle 'jcf/vim-latex'
 Bundle 'avakhov/vim-yaml'
 "Bundle 'stephpy/vim-yaml'
 Bundle 'vim-scripts/AnsiEsc.vim'
+Bundle 'IN3D/vim-raml'
+Bundle 'rdolgushin/groovy.vim'
+Bundle 'vim-scripts/groovyindent'
 
 " markdown
 Bundle 'plasticboy/vim-markdown'

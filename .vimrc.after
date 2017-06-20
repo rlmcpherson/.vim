@@ -1,18 +1,24 @@
-"theme, color
-
-"let &t_Co=256
-colorscheme Gruvbox
-set background=dark
-
-let NERDTreeWinPos = "right"
 let g:indent_guides_enable_on_vim_startup = 0
 let g:Powerline_symbols = 'fancy'
 
 "ruby tabs to spaces
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType raml setlocal ts=2 sts=2 sw=2 expandtab
+
+" yaml.tmpl as yaml
+autocmd BufNewFile,BufRead *.yaml.tmpl   set syntax=yaml
+
 
 " autosave buffers
 autocmd BufLeave,FocusLost * silent! wall
+
+" yaml
+filetype plugin indent on
+
+"jenkins
+"au BufReadPost Jenkinsfile set syntax=groovy
+"au BufReadPost Jenkinsfile set filetype=groovy
 
 " ag / the silver searcher 
 "let g:agprg="ag -i --column"
@@ -34,7 +40,6 @@ inoremap jj <ESC>
 set autoindent
 set wrap
 set smartindent
-set tabstop=2
 syntax on
 filetype indent on
 filetype plugin on

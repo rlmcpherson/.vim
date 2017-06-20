@@ -123,9 +123,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
-let g:go_guru_tags = "service"
-let g:syntastic_go_go_test_args = "-tags=service"
-let g:syntastic_go_go_build_args = "-tags=service"
+let g:go_guru_tags = "servicetest"
+let g:syntastic_go_go_test_args = "-tags=servicetest"
+let g:syntastic_go_go_build_args = "-tags=servicetest"
 "let g:go_list_type = "locationlist"
 let g:go_auto_sameids = 1
 "let g:go_metalinter_autosave = 1
@@ -149,7 +149,6 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " go-info shortcut
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
-let g:go_auto_type_info = 1
 
 
 " syntastic
@@ -158,6 +157,9 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck', 'go']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck'] " go save speedup
+" syntastic python
+let g:syntastic_python_checkers = ['python', 'flake8']
+let g:syntastic_python_flake8_args = "--config $HOME/.flake8"
 
 
 
@@ -236,4 +238,8 @@ set background=dark
 let g:gruvbox_contrast_dark = 'soft'
 
 
+" ale linter 
+let g:ale_python_flake8_executable = "/usr/local/bin/flake8"
+let g:ale_linters = {'go': ['go build', 'gofmt', 'golint', 'gosimple', 'go vet', 'staticcheck', 'gometalinter']}
+let g:ale_go_gometalinter_options = '--enable=vet --enable=vetshadow'
 

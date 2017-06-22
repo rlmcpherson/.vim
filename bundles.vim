@@ -53,7 +53,7 @@ Bundle 'godlygeek/tabular'
 " misc
 Bundle 'tpope/vim-repeat'
 Bundle 'vitaly/vim-gitignore'
-Bundle 'rking/ag.vim'
+Bundle 'mileszs/ack.vim'
 
 " tmux
 Bundle 'tsaleh/vim-tmux'

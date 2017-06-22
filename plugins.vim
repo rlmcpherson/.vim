@@ -240,6 +240,12 @@ let g:gruvbox_contrast_dark = 'soft'
 
 " ale linter 
 let g:ale_python_flake8_executable = "/usr/local/bin/flake8"
-let g:ale_linters = {'go': ['go build', 'gofmt', 'golint', 'gosimple', 'go vet', 'staticcheck', 'gometalinter']}
+let g:ale_linters = {'go': ['go lint', 'gofmt', 'go vet', 'go build']}
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 1
+let g:ale_use_ch_sendraw = 1
+let g:ale_lint_delay=50
 let g:ale_go_gometalinter_options = '--enable=vet --enable=vetshadow'
 
+" ag, using ack.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'

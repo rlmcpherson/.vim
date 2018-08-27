@@ -12,7 +12,7 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'YankRing.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 Bundle 'greplace.vim'
 Bundle 'astrails/vim-powerline'
@@ -53,7 +53,7 @@ Bundle 'godlygeek/tabular'
 " misc
 Bundle 'tpope/vim-repeat'
 Bundle 'vitaly/vim-gitignore'
-Bundle 'rking/ag.vim'
+Bundle 'mileszs/ack.vim'
 
 " tmux
 Bundle 'tsaleh/vim-tmux'
@@ -91,3 +91,10 @@ Bundle 'uarun/vim-protobuf'
 
 "casing 
 Bundle 'tpope/vim-abolish'
+
+"python 
+Bundle 'vim-scripts/indentpython.vim'
+Bundle 'nvie/vim-flake8'
+
+" linting
+Bundle 'w0rp/ale'

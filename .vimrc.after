@@ -9,6 +9,9 @@ let g:Powerline_symbols = 'fancy'
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" yaml.tmpl as yaml
+autocmd BufNewFile,BufRead *.yaml.tmpl   set syntax=yaml
+
 " autosave buffers
 autocmd BufLeave,FocusLost * silent! wall
 
@@ -35,7 +38,6 @@ inoremap jj <ESC>
 set autoindent
 set wrap
 set smartindent
-set tabstop=2
 syntax on
 filetype indent on
 filetype plugin on

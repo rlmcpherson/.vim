@@ -1,20 +1,23 @@
 let g:indent_guides_enable_on_vim_startup = 0
 let g:Powerline_symbols = 'fancy'
 
+
+" ycm python3 workaround
+if has('python3')
+    silent! python3 1
+endif
+
 "ruby tabs to spaces
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType raml setlocal ts=2 sts=2 sw=2 expandtab
 
 " yaml.tmpl as yaml
-autocmd BufNewFile,BufRead *.yaml.tmpl   set syntax=yaml
+autocmd BufNewFile,BufRead *.tmpl   set syntax=yaml
 
 
 " autosave buffers
 autocmd BufLeave,FocusLost * silent! wall
-
-" yaml
-filetype plugin indent on
 
 "jenkins
 "au BufReadPost Jenkinsfile set syntax=groovy
@@ -40,6 +43,8 @@ inoremap jj <ESC>
 set autoindent
 set wrap
 set smartindent
+set redrawtime=4000
 syntax on
 filetype indent on
 filetype plugin on
+

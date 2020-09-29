@@ -8,9 +8,10 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'ctrlpvim/ctrlp.vim'
+"Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'YankRing.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rhubarb'
 Bundle 'airblade/vim-gitgutter'
 "Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
@@ -25,11 +26,6 @@ Bundle 'terryma/vim-expand-region'
 " autoclose
 "Bundle 'Raimondi/delimitMate'
 
-" Ruby/Rails
-"Bundle 'tpope/vim-rails'
-"Bundle 'tpope/vim-bundler'
-"Bundle 'tpope/vim-rake'
-
 " color themes
 Bundle 'mhartington/oceanic-next'
 Bundle 'morhetz/gruvbox'
@@ -39,12 +35,10 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'JSON.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'jcf/vim-latex'
-Bundle 'avakhov/vim-yaml'
-"Bundle 'stephpy/vim-yaml'
+"Bundle 'avakhov/vim-yaml'
 Bundle 'vim-scripts/AnsiEsc.vim'
 Bundle 'IN3D/vim-raml'
 Bundle 'rdolgushin/groovy.vim'
-Bundle 'vim-scripts/groovyindent'
 
 " markdown
 Bundle 'plasticboy/vim-markdown'
@@ -95,6 +89,19 @@ Bundle 'tpope/vim-abolish'
 "python 
 Bundle 'vim-scripts/indentpython.vim'
 Bundle 'nvie/vim-flake8'
+Bundle 'pydoc.vim'
+"Bundle 'python-mode/python-mode'
 
 " linting
 Bundle 'w0rp/ale'
+
+Bundle 'mbbill/undotree'
+
+" fzf
+Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Bundle 'junegunn/fzf.vim'
+
+
+" yaml 
+Bundle 'adrienverge/yamllint'
+Bundle 'Yggdroot/indentLine'

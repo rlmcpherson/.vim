@@ -33,22 +33,21 @@ let g:yankring_history_dir = '~/.backup'
 
 
 "ctrlp
-let g:ctrlp_map = '<leader><leader>'
-let g:ctrlp_cmd = 'CtrlP'
-"let g:ctrlp_split_window = 1
+"let g:ctrlp_map = '<leader><leader>'
+"let g:ctrlp_cmd = 'CtrlP'
 
-nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>
-nmap <leader>l :CtrlPLine<cr>
-nmap <leader>b :CtrlPBuff<cr>
-nmap <leader>m :CtrlPBufTag<cr>
-nmap <leader>M :CtrlPBufTagAll<cr>
+"nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>
+"nmap <leader>l :CtrlPLine<cr>
+"nmap <leader>b :CtrlPBuff<cr>
+"nmap <leader>m :CtrlPBufTag<cr>
+"nmap <leader>M :CtrlPBufTagAll<cr>
 
-let g:ctrlp_clear_cache_on_exit = 1
-" ctrlp leaves stale caches behind if there is another vim process runnin
-" which didn't use ctrlp. so we clear all caches on each new vim invocation
-cal ctrlp#clra()
+"let g:ctrlp_clear_cache_on_exit = 1
+ "ctrlp leaves stale caches behind if there is another vim process runnin
+ "which didn't use ctrlp. so we clear all caches on each new vim invocation
+"cal ctrlp#clra()
 
-let g:ctrlp_max_height = 30
+"let g:ctrlp_max_height = 30
 
 " show on top
 "let g:ctrlp_match_window_bottom = 0
@@ -58,15 +57,21 @@ let g:ctrlp_max_height = 30
 "let g:ctrlp_switch_buffer = 1
 
 " ignore godep
-let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](Godeps)$', }
+"let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](vendor)$', }
 
 " open multiple files with <c-z> to mark and <c-o> to open. v - opening in
 " vertical splits; j - jump to first open buffer; r - open first in current buffer
-let g:ctrlp_open_multiple_files = 'vjr'
+"let g:ctrlp_open_multiple_files = 'vjr'
 
-let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'mixed', 'line']
-" from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-let g:ctrlp_use_caching = 1
+"let g:ctrlp_prompt_mappings = {
+    "\ 'AcceptSelection("e")': ['<c-v>', '<2-LeftMouse>'],
+    "\ 'AcceptSelection("v")': ['<cr>', '<RightMouse>'],
+    "\ }
+
+
+"let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'mixed', 'line']
+"" from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+"let g:ctrlp_use_caching = 1
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
@@ -127,7 +132,7 @@ let g:go_guru_tags = "servicetest"
 let g:syntastic_go_go_test_args = "-tags=servicetest"
 let g:syntastic_go_go_build_args = "-tags=servicetest"
 "let g:go_list_type = "locationlist"
-let g:go_auto_sameids = 1
+let g:go_auto_sameids = 0
 "let g:go_metalinter_autosave = 1
 "let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 
@@ -230,6 +235,7 @@ if !exists("g:UltiSnipsJumpBackwardTrigger")
 endif
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger     . " <C-R>=g:UltiSnips_Complete()<cr>"
+:wa
 au InsertEnter * exec "inoremap <silent> " .     g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>" 
 
 "theme, color
@@ -244,8 +250,48 @@ let g:ale_linters = {'go': ['go lint', 'gofmt', 'go vet', 'go build']}
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1
 let g:ale_use_ch_sendraw = 1
-let g:ale_lint_delay=50
+let g:ale_lint_delay=200
 let g:ale_go_gometalinter_options = '--enable=vet --enable=vetshadow'
 
 " ag, using ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
+" ackvim, don't open first result automatically
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+" ackvim nerdtree compat
+let g:ack_mappings = {
+              \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
+              \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
+
+
+" fzf / ripgrep
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+set grepprg=rg\ --vimgrep
+
+nmap ; :Buffers<CR>
+nmap <Leader><Leader> :Files<CR>
+
+" python-mode
+let g:pymode_rope_autoimport = 0
+let g:pymode_rope = 0
+
+" yaml 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+set foldlevelstart=20
+
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'

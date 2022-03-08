@@ -1,107 +1,108 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'scrooloose/nerdcommenter'
-"Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'YankRing.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rhubarb'
-Bundle 'airblade/vim-gitgutter'
-"Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-surround'
-Bundle 'greplace.vim'
-Bundle 'astrails/vim-powerline'
-Bundle 'Indent-Guides'
-Bundle 'utl.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'YankRing.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'airblade/vim-gitgutter'
+"Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'greplace.vim'
+Plugin 'astrails/vim-powerline'
+Plugin 'Indent-Guides'
+Plugin 'utl.vim'
 
 " text selection
-Bundle 'terryma/vim-expand-region' 
+Plugin 'terryma/vim-expand-region' 
 
 " autoclose
-"Bundle 'Raimondi/delimitMate'
+"Plugin 'Raimondi/delimitMate'
 
 " color themes
-Bundle 'mhartington/oceanic-next'
-Bundle 'morhetz/gruvbox'
+Plugin 'mhartington/oceanic-next'
+Plugin 'morhetz/gruvbox'
 
 " syntax support
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'JSON.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'jcf/vim-latex'
-"Bundle 'avakhov/vim-yaml'
-Bundle 'vim-scripts/AnsiEsc.vim'
-Bundle 'IN3D/vim-raml'
-Bundle 'rdolgushin/groovy.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'JSON.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'jcf/vim-latex'
+"Plugin 'avakhov/vim-yaml'
+Plugin 'vim-scripts/AnsiEsc.vim'
+Plugin 'IN3D/vim-raml'
+Plugin 'rdolgushin/groovy.vim'
 
 " markdown
-Bundle 'plasticboy/vim-markdown'
-Bundle 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'godlygeek/tabular'
 
 " misc
-Bundle 'tpope/vim-repeat'
-Bundle 'vitaly/vim-gitignore'
-Bundle 'mileszs/ack.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'vitaly/vim-gitignore'
+Plugin 'mileszs/ack.vim'
 
 " tmux
-Bundle 'tsaleh/vim-tmux'
-Bundle 'benmills/vimux'
-Bundle 'tpope/vim-obsession.git'
+Plugin 'tsaleh/vim-tmux'
+Plugin 'benmills/vimux'
+Plugin 'tpope/vim-obsession.git'
 
 " completion
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " go
-Bundle 'fatih/vim-go'
-Bundle 'SirVer/ultisnips'
-Bundle 'majutsushi/tagbar'
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'Shougo/neocomplete'
+Plugin 'fatih/vim-go'
+Plugin 'SirVer/ultisnips'
+Plugin 'majutsushi/tagbar'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'Shougo/neocomplete'
 
 " gist
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 "rust
-Bundle 'phildawes/racer'
-Bundle 'wting/rust.vim'
+Plugin 'phildawes/racer'
+Plugin 'wting/rust.vim'
 
 
 " search
-Bundle 'dkprice/vim-easygrep'
+Plugin 'dkprice/vim-easygrep'
 
 " c / c++
-"Bundle 'vim-scripts/a.vim'
-"Bundle 'Rip-Rip/clang_complete'
+"Plugin 'vim-scripts/a.vim'
+"Plugin 'Rip-Rip/clang_complete'
 
 " proto
-Bundle 'uarun/vim-protobuf'
+Plugin 'uarun/vim-protobuf'
 
 "casing 
-Bundle 'tpope/vim-abolish'
+Plugin 'tpope/vim-abolish'
 
 "python 
-Bundle 'vim-scripts/indentpython.vim'
-Bundle 'nvie/vim-flake8'
-Bundle 'pydoc.vim'
-"Bundle 'python-mode/python-mode'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'pydoc.vim'
+"Plugin 'python-mode/python-mode'
 
 " linting
-Bundle 'w0rp/ale'
+Plugin 'w0rp/ale'
 
-Bundle 'mbbill/undotree'
+Plugin 'mbbill/undotree'
 
 " fzf
-Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Bundle 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf' , { 'do': { -> fzf#install() } }
 
 
 " yaml 
-Bundle 'adrienverge/yamllint'
-Bundle 'Yggdroot/indentLine'
+Plugin 'adrienverge/yamllint'
+Plugin 'Yggdroot/indentLine'

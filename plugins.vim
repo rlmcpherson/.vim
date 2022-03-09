@@ -5,6 +5,7 @@ nmap <C-P> :NERDTreeTabsToggle<CR>
 " ,p to show current file in the tree
 nmap <leader>p :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
+let g:nerdtree_tabs_open_on_console_startup=1
 
 " nerdcommenter
 " ,/ to invert comment on the current line/selection

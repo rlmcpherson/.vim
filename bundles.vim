@@ -106,3 +106,7 @@ Plugin 'junegunn/fzf' , { 'do': { -> fzf#install() } }
 " yaml 
 Plugin 'adrienverge/yamllint'
 Plugin 'Yggdroot/indentLine'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required

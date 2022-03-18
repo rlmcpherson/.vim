@@ -36,8 +36,13 @@ hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
                         " ignore these files when completing names and in
                         " explorer
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*/Godeps/*
-" set shell=/bin/bash " use bash for shell commands
-set shell=/usr/bin/zsh " use zsh for shell commands
+
+" use zsh for shell commands
+if system('uname') =~ "Darwin"
+  set shell=/opt/homebrew/bin/zsh 
+else
+  set shell=/usr/bin/zsh 
+endif
 set autowriteall        " Automatically save before commands like :next and :make
 set hidden              " enable multiple modified buffers
 set history=1000

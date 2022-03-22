@@ -47,7 +47,7 @@ Plugin 'godlygeek/tabular'
 
 " misc
 Plugin 'tpope/vim-repeat'
-Plugin 'vitaly/vim-gitignore'
+Plugin 'rdolgushin/gitignore'
 Plugin 'mileszs/ack.vim'
 
 " tmux

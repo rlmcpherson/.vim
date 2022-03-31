@@ -29,7 +29,7 @@ Plugin 'terryma/vim-expand-region'
 
 " color themes
 Plugin 'mhartington/oceanic-next'
-Plugin 'morhetz/gruvbox'
+Plugin 'rakr/vim-one'
 
 " syntax support
 Plugin 'vim-ruby/vim-ruby'

@@ -194,10 +194,10 @@ let g:ycm_semantic_triggers =  {
 
 
 "theme, color
-"colorscheme Gruvbox
-"set background=dark
-"let g:gruvbox_contrast_dark = 'soft'
-
+colorscheme one 
+set background=dark
+let g:airline_theme='one'
+let g:one_allow_italics = 1 " I love italic for comments
 
 " ale linter 
 let g:ale_python_flake8_executable = "/usr/local/bin/flake8"
